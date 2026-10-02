@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Workly — Authentication</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="auth">
+<canvas id="particles"></canvas>
+<main class="auth-shell">
+  <section class="auth-brand">
+    <a class="brand" href="/">WORKLY<span>.</span></a>
+    <h1>Your next great project starts here.</h1>
+    <p>One secure gateway for clients and freelancers.</p>
+  </section>
+
+  <section class="auth-card glass">
+    <div class="tabs">
+      <button class="tab active" data-auth-tab="login">Sign in</button>
+      <button class="tab" data-auth-tab="register">Create account</button>
+    </div>
+
+    <form id="loginForm" class="auth-form">
+      <label>Email<input name="email" type="email" autocomplete="email" required></label>
+      <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+      <label>Account role
+        <select name="role" required>
+          <option value="client">Client</option>
+          <option value="freelancer">Freelancer</option>
+        </select>
+      </label>
+      <button class="btn btn-primary full" type="submit">Sign in</button>
+    </form>
+
+    <form id="registerForm" class="auth-form hidden">
+      <label>Full name<input name="name" maxlength="120" required></label>
+      <label>Email<input name="email" type="email" autocomplete="email" required></label>
+      <label>Password<input name="password" type="password" minlength="8" autocomplete="new-password" required></label>
+      <label>Account role
+        <select name="role" required>
+          <option value="client">Client</option>
+          <option value="freelancer">Freelancer</option>
+        </select>
+      </label>
+      <label>Company / brand <span class="muted">(optional)</span><input name="company_name" maxlength="160"></label>
+      <button class="btn btn-primary full" type="submit">Create account</button>
+    </form>
+    <div class="demo-panel">
+      <div>
+        <strong>Review demo accounts</strong>
+        <p class="muted">Use these pre-seeded accounts to demonstrate the complete client → freelancer workflow.</p>
+      </div>
+      <div class="demo-actions">
+        <button type="button" class="btn btn-ghost" data-demo-login data-demo-email="client@workly.demo" data-demo-password="Client@12345" data-demo-role="client">Use Demo Client</button>
+        <button type="button" class="btn btn-ghost" data-demo-login data-demo-email="freelancer@workly.demo" data-demo-password="Freelancer@12345" data-demo-role="freelancer">Use Demo Freelancer</button>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="toast-root"></div>
+<script src="script.js"></script>
+</body>
+</html>

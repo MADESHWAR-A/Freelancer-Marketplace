@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Workly — Client Workspace</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="client">
+<canvas id="particles"></canvas>
+<div class="app-shell">
+  <aside class="sidebar glass">
+    <a class="brand" href="/">WORKLY<span>.</span></a>
+    <nav>
+      <a class="nav-link active" href="#overview">Overview</a>
+      <a class="nav-link" href="#projects">My Projects</a>
+      <a class="nav-link" href="#profile">Profile</a>
+    </nav>
+    <button id="logoutBtn" class="btn btn-ghost full">Sign out</button>
+  </aside>
+
+  <main class="dashboard">
+    <header class="page-head">
+      <div><span class="eyebrow">CLIENT WORKSPACE</span><h1>Good to see you, <span id="userName">there</span>.</h1></div>
+      <button id="openProjectModal" class="btn btn-primary">＋ Post a Project</button>
+    </header>
+
+    <section class="stats-grid">
+      <article class="glass stat-card"><span>Active projects</span><strong id="activeCount">—</strong></article>
+      <article class="glass stat-card"><span>Total bids</span><strong id="bidCount">—</strong></article>
+      <article class="glass stat-card"><span>In progress</span><strong id="progressCount">—</strong></article>
+    </section>
+
+    <section id="projects" class="panel">
+      <div class="section-head"><div><h2>My projects</h2><p>Monitor your marketplace activity.</p></div></div>
+      <div id="clientProjects" class="project-list skeleton-wrap"></div>
+    </section>
+
+    <section id="profile" class="panel">
+      <div class="section-head"><div><h2>Profile</h2><p>Keep your client details current.</p></div></div>
+      <form id="clientProfileForm" class="form-grid">
+        <label>Company / brand<input name="company_name"></label>
+        <label>Portfolio URL<input name="portfolio_url" type="url"></label>
+        <label class="span-2">Bio<textarea name="bio" rows="4"></textarea></label>
+        <button class="btn btn-primary" type="submit">Save profile</button>
+      </form>
+    </section>
+  </main>
+</div>
+
+<div id="projectModal" class="modal hidden">
+  <div class="modal-card glass">
+    <button class="modal-close" data-close="projectModal">×</button>
+    <h2>Post a new project</h2>
+    <form id="projectForm" class="form-grid">
+      <label class="span-2">Project title<input name="title" maxlength="160" required></label>
+      <label class="span-2">Description<textarea name="description" rows="6" required></textarea></label>
+      <label>Budget ($)<input name="budget" type="number" min="1" step="0.01" required></label>
+      <label>Required skills<input name="skills_required" placeholder="Node.js, React, PostgreSQL" required></label>
+      <button class="btn btn-primary" type="submit">Publish project</button>
+    </form>
+  </div>
+</div>
+
+<div id="proposalModal" class="modal hidden">
+  <div class="modal-card glass wide">
+    <button class="modal-close" data-close="proposalModal">×</button>
+    <h2>Received proposals</h2>
+    <div id="proposalList"></div>
+  </div>
+</div>
+<div id="chatModal" class="modal hidden">
+  <div class="modal-card glass chat-card">
+    <button class="modal-close" data-close="chatModal">×</button>
+    <h2>Live chat</h2>
+    <div id="chatMessages" class="chat-messages"></div>
+    <form id="chatForm" class="chat-input"><input id="chatText" placeholder="Write a message…" maxlength="4000" required><button class="btn btn-primary">Send</button></form>
+  </div>
+</div>
+<div id="toast-root"></div>
+<script src="script.js"></script>
+</body>
+</html>

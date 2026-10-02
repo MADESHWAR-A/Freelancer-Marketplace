@@ -1,0 +1,25 @@
+{
+  "name": "enterprise-freelancer-marketplace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Production-oriented Freelancer Marketplace using Express, SQLite/PostgreSQL, JWT HttpOnly cookies and native WebSockets.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "init-db": "node config/init-db.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "openai": "^7.9.0",
+    "pg": "^8.16.3",
+    "sqlite3": "^5.1.7",
+    "ws": "^8.18.3"
+  }
+}

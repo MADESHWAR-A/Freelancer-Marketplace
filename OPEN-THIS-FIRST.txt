@@ -1,0 +1,34 @@
+WORKLY REVIEW READY - QUICK START
+
+1. Open this folder in VS Code.
+2. Open Terminal.
+3. Run:
+   npm install
+   npm start
+
+4. Open:
+   http://localhost:3000
+
+IMPORTANT:
+Do NOT use VS Code Live Server for the normal demo. Express serves the frontend and API together.
+
+If you DO use Live Server:
+- Start npm start first.
+- Open auth.html with Live Server (usually http://127.0.0.1:5500/auth.html).
+- The updated frontend automatically sends API requests to http://localhost:3000 and WebSocket chat to port 3000.
+- Keep npm start running.
+
+DEMO ACCOUNTS:
+Client:
+client@workly.demo
+Client@12345
+
+Freelancer:
+freelancer@workly.demo
+Freelancer@12345
+
+DIRECT DASHBOARD URLs:
+http://localhost:3000/client-dashboard.html
+http://localhost:3000/freelancer-dashboard.html
+
+These pages are protected. If not logged in, they redirect to auth.html.
